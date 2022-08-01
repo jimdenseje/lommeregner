@@ -1,3 +1,6 @@
+using System.Diagnostics;
+using System.Text.Json;
+
 namespace lommeregner
 {
     public partial class Main : Form
@@ -121,8 +124,66 @@ namespace lommeregner
             //Make calculator from display text
             string[] numbers = Display.Text.Split(' ');
             double result = 0;
-            try { 
+            try
+            {
+                //added to fix fundementel matematic problem, we broke the fundiment rules of matematic´s one have to divide and multiply before substracting and addition
+                //before 2 + 3 * 3 gave 15 it's 11.
+                if (numbers.Length > 3) { 
+                    for (int i = 0; i < numbers.Length; i++)
+                        {
+                            if (numbers[i] == "*")
+                            {
+                                if (double.Parse(numbers[i - 1]) == 0 || double.Parse(numbers[i + 1]) == 0)
+                                {
+                                    numbers = numbers.Where((source, index) => index != (i - 1)).ToArray();
+                                    i--;
+                                    numbers = numbers.Where((source, index) => index != i).ToArray();
+                                    i--;
+                                    numbers[i + 1] = "0";
+                                }
+                                else
+                                {
+                                    Debug.WriteLine(JsonSerializer.Serialize(numbers));
+                                    Debug.WriteLine(double.Parse(numbers[i - 1].Replace('.', ',')) + " * " + double.Parse(numbers[i + 1].Replace('.', ',')));
+
+                                    double calc = double.Parse(numbers[i - 1].Replace('.', ',')) * double.Parse(numbers[i + 1].Replace('.', ','));
+                                    numbers = numbers.Where((source, index) => index != (i - 1)).ToArray();
+                                    i--;
+                                    numbers = numbers.Where((source, index) => index != i).ToArray();
+                                    i--;
+                                    numbers[i + 1] = calc.ToString();
+
+                                    Debug.WriteLine(JsonSerializer.Serialize(numbers));
+                                }
+                            }
+                            else if (numbers[i] == "/")
+                            {
+                                if (double.Parse(numbers[i - 1]) == 0 || double.Parse(numbers[i + 1]) == 0)
+                                {
+                                    History.AppendText(Display.Text + "\n");
+                                    History.AppendText("Result: Der kan ikke divideres med 0\n\n");
+                                    return;
+                                }
+
+                                Debug.WriteLine(JsonSerializer.Serialize(numbers));
+
+
+                                Debug.WriteLine(double.Parse(numbers[i - 1].Replace('.', ',')) + " / " + double.Parse(numbers[i + 1].Replace('.', ',')));
+
+                                double calc = double.Parse(numbers[i - 1].Replace('.', ',')) / double.Parse(numbers[i + 1].Replace('.', ','));
+                                numbers = numbers.Where((source, index) => index != (i - 1)).ToArray();
+                                i--;
+                                numbers = numbers.Where((source, index) => index != i).ToArray();
+                                i--;
+                                numbers[i + 1] = calc.ToString();
+
+                                Debug.WriteLine(JsonSerializer.Serialize(numbers));
+                            }
+                        }
+                }
+
                 result = double.Parse(numbers[0].Replace('.', ','));
+
                 for (int i = 1; i < numbers.Length; i++)
                 {
                     if (numbers[i] == "+")
