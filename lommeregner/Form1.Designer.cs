@@ -60,6 +60,7 @@
             this.Display.ReadOnly = true;
             this.Display.Size = new System.Drawing.Size(607, 31);
             this.Display.TabIndex = 0;
+            this.Display.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Display_KeyDown);
             // 
             // History
             // 
@@ -71,6 +72,7 @@
             this.History.Size = new System.Drawing.Size(226, 289);
             this.History.TabIndex = 1;
             this.History.Text = "";
+            this.History.KeyDown += new System.Windows.Forms.KeyEventHandler(this.History_KeyDown);
             // 
             // SubtractBtn
             // 
@@ -288,6 +290,7 @@
             this.MaximizeBox = false;
             this.Name = "Main";
             this.Text = "Lommeregner";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

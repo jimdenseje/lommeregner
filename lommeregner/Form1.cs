@@ -135,10 +135,280 @@ namespace lommeregner
                     result /= double.Parse(numbers[i + 1].Replace('.', ','));
                 }
             }
+            if (Display.Text != result.ToString()) {
+                string calcresult = string.Join(" ", numbers);
+                History.AppendText(calcresult + "\n");
+                History.AppendText($"Result: {Display.Text}\n");
+            }
             Display.Text = result.ToString();
-            string calcresult = string.Join(" ", numbers);
-            History.AppendText(calcresult + "\n");
-            History.AppendText($"Result: {Display.Text}\n");
+        }
+
+        private void Main_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.Handled = false;
+
+            if (e.KeyCode == Keys.D0 || e.KeyCode == Keys.NumPad0)
+            {
+                Num_0.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1) {
+
+                Num_1.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D2 || e.KeyCode == Keys.NumPad2)
+            {
+
+                Num_2.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D3 || e.KeyCode == Keys.NumPad3)
+            {
+
+                Num_3.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D3 || e.KeyCode == Keys.NumPad3)
+            {
+
+                Num_3.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D4 || e.KeyCode == Keys.NumPad4)
+            {
+
+                Num_4.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D5 || e.KeyCode == Keys.NumPad5)
+            {
+
+                Num_5.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D6 || e.KeyCode == Keys.NumPad6)
+            {
+
+                Num_6.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D7 || e.KeyCode == Keys.NumPad7)
+            {
+
+                Num_7.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D8 || e.KeyCode == Keys.NumPad8) {
+                Num_8.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D9 || e.KeyCode == Keys.NumPad9)
+            {
+                Num_9.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete)
+            {
+                DeleteBtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Divide)
+            {
+                DivideBtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Multiply)
+            {
+                MultiplyBtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Subtract)
+            {
+                SubtractBtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Add)
+            {
+                AddBtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Decimal || e.KeyCode == Keys.OemPeriod)
+            {
+                Num_Decimal.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                EqualBtn.PerformClick();
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Display_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.Handled = false;
+
+            if (e.KeyCode == Keys.D0 || e.KeyCode == Keys.NumPad0)
+            {
+                Num_0.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1)
+            {
+
+                Num_1.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D2 || e.KeyCode == Keys.NumPad2)
+            {
+
+                Num_2.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D3 || e.KeyCode == Keys.NumPad3)
+            {
+
+                Num_3.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D3 || e.KeyCode == Keys.NumPad3)
+            {
+
+                Num_3.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D4 || e.KeyCode == Keys.NumPad4)
+            {
+
+                Num_4.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D5 || e.KeyCode == Keys.NumPad5)
+            {
+
+                Num_5.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D6 || e.KeyCode == Keys.NumPad6)
+            {
+
+                Num_6.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D7 || e.KeyCode == Keys.NumPad7)
+            {
+
+                Num_7.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D8 || e.KeyCode == Keys.NumPad8)
+            {
+                Num_8.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D9 || e.KeyCode == Keys.NumPad9)
+            {
+                Num_9.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete)
+            {
+                DeleteBtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Divide)
+            {
+                DivideBtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Multiply)
+            {
+                MultiplyBtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Subtract)
+            {
+                SubtractBtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Add)
+            {
+                AddBtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Decimal || e.KeyCode == Keys.OemPeriod)
+            {
+                Num_Decimal.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                EqualBtn.PerformClick();
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void History_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.Handled = false;
+
+            if (e.KeyCode == Keys.D0 || e.KeyCode == Keys.NumPad0)
+            {
+                Num_0.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D1 || e.KeyCode == Keys.NumPad1)
+            {
+
+                Num_1.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D2 || e.KeyCode == Keys.NumPad2)
+            {
+
+                Num_2.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D3 || e.KeyCode == Keys.NumPad3)
+            {
+
+                Num_3.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D3 || e.KeyCode == Keys.NumPad3)
+            {
+
+                Num_3.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D4 || e.KeyCode == Keys.NumPad4)
+            {
+
+                Num_4.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D5 || e.KeyCode == Keys.NumPad5)
+            {
+
+                Num_5.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D6 || e.KeyCode == Keys.NumPad6)
+            {
+
+                Num_6.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D7 || e.KeyCode == Keys.NumPad7)
+            {
+
+                Num_7.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D8 || e.KeyCode == Keys.NumPad8)
+            {
+                Num_8.PerformClick();
+            }
+            else if (e.KeyCode == Keys.D9 || e.KeyCode == Keys.NumPad9)
+            {
+                Num_9.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete)
+            {
+                DeleteBtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Divide)
+            {
+                DivideBtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Multiply)
+            {
+                MultiplyBtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Subtract)
+            {
+                SubtractBtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Add)
+            {
+                AddBtn.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Decimal || e.KeyCode == Keys.OemPeriod)
+            {
+                Num_Decimal.PerformClick();
+            }
+            else if (e.KeyCode == Keys.Enter)
+            {
+                EqualBtn.PerformClick();
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }
