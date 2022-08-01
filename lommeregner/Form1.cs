@@ -136,11 +136,15 @@ namespace lommeregner
                 }
             }
             if (Display.Text != result.ToString()) {
+                Display.Text = result.ToString();
                 string calcresult = string.Join(" ", numbers);
                 History.AppendText(calcresult + "\n");
                 History.AppendText($"Result: {Display.Text}\n");
+            } else
+            {
+                Display.Text = result.ToString();
             }
-            Display.Text = result.ToString();
+            
         }
 
         private void Main_KeyDown(object sender, KeyEventArgs e)
