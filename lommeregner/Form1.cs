@@ -79,6 +79,10 @@ namespace lommeregner
         {
             if (Display.Text.Length > 0)
             {
+                if (Display.Text.Substring(Display.Text.Length - 1) == " ")
+                {
+                    Display.Text = Display.Text.Remove(Display.Text.Length - 2);
+                }
                 Display.Text = Display.Text.Remove(Display.Text.Length - 1);
             }
             else
@@ -116,31 +120,58 @@ namespace lommeregner
         {
             //Make calculator from display text
             string[] numbers = Display.Text.Split(' ');
-            double result = double.Parse(numbers[0].Replace('.',','));
-            for (int i = 1; i < numbers.Length; i++)
-            {
-                if (numbers[i] == "+")
+            double result = 0;
+            try { 
+                result = double.Parse(numbers[0].Replace('.', ','));
+                for (int i = 1; i < numbers.Length; i++)
                 {
-                    result += double.Parse(numbers[i + 1].Replace('.',','));
-                }
-                else if (numbers[i] == "-")
-                {
-                    result -= double.Parse(numbers[i + 1].Replace('.', ','));
-                }
-                else if (numbers[i] == "*")
-                {
-                    result *= double.Parse(numbers[i + 1].Replace('.', ','));
-                }
-                else if (numbers[i] == "/")
-                {
-                    result /= double.Parse(numbers[i + 1].Replace('.', ','));
+                    if (numbers[i] == "+")
+                    {
+                        result += double.Parse(numbers[i + 1].Replace('.', ','));
+                    }
+                    else if (numbers[i] == "-")
+                    {
+                        result -= double.Parse(numbers[i + 1].Replace('.', ','));
+                    }
+                    else if (numbers[i] == "*")
+                    {
+                        if (double.Parse(numbers[i - 1]) == 0 || double.Parse(numbers[i + 1]) == 0)
+                        {
+                            History.AppendText(Display.Text + "\n");
+                            History.AppendText("Result: 0\n\n");
+                            Display.Text = "0";
+                            return;
+                        }
+                        result *= double.Parse(numbers[i + 1].Replace('.', ','));
+                    }
+                    else if (numbers[i] == "/")
+                    {
+                        if (double.Parse(numbers[i - 1]) == 0 || double.Parse(numbers[i + 1]) == 0)
+                        {
+                            History.AppendText(Display.Text + "\n");
+                            History.AppendText("Result: Der kan ikke divideres med 0\n\n");
+                            return;
+                        }
+                        result /= double.Parse(numbers[i + 1].Replace('.', ','));
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                if (ex is InvalidCastException || ex is System.FormatException)
+                {
+                    History.AppendText(Display.Text + "\n");
+                    History.AppendText("Result: Fejl i regnestykket\n\n");
+                    return;
+                }
+
+                throw;
+            }
+
             if (Display.Text != result.ToString()) {
+                History.AppendText(Display.Text + "\n");
                 Display.Text = result.ToString();
-                string calcresult = string.Join(" ", numbers);
-                History.AppendText(calcresult + "\n");
-                History.AppendText($"Result: {Display.Text}\n");
+                History.AppendText($"Result: {Display.Text}\n\n");
             } else
             {
                 Display.Text = result.ToString();
