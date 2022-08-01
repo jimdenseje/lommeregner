@@ -5,7 +5,7 @@ namespace lommeregner
         List<string> enteries = new List<string>();
         public Main()
         {
-            // hej sa
+            //Dette er en kommentar
             InitializeComponent();
         }
 
