@@ -81,6 +81,7 @@
             this.SubtractBtn.TabIndex = 2;
             this.SubtractBtn.Text = "-";
             this.SubtractBtn.UseVisualStyleBackColor = true;
+            this.SubtractBtn.Click += new System.EventHandler(this.SubtractBtn_Click);
             // 
             // MultiplyBtn
             // 
@@ -91,6 +92,7 @@
             this.MultiplyBtn.TabIndex = 3;
             this.MultiplyBtn.Text = "X";
             this.MultiplyBtn.UseVisualStyleBackColor = true;
+            this.MultiplyBtn.Click += new System.EventHandler(this.MultiplyBtn_Click);
             // 
             // DivideBtn
             // 
@@ -101,6 +103,7 @@
             this.DivideBtn.TabIndex = 4;
             this.DivideBtn.Text = "/";
             this.DivideBtn.UseVisualStyleBackColor = true;
+            this.DivideBtn.Click += new System.EventHandler(this.DivideBtn_Click);
             // 
             // AddBtn
             // 
@@ -111,6 +114,7 @@
             this.AddBtn.TabIndex = 5;
             this.AddBtn.Text = "+";
             this.AddBtn.UseVisualStyleBackColor = true;
+            this.AddBtn.Click += new System.EventHandler(this.AddBtn_Click);
             // 
             // EqualBtn
             // 
@@ -121,6 +125,7 @@
             this.EqualBtn.TabIndex = 6;
             this.EqualBtn.Text = "=";
             this.EqualBtn.UseVisualStyleBackColor = true;
+            this.EqualBtn.Click += new System.EventHandler(this.EqualBtn_Click);
             // 
             // Num_8
             // 
@@ -131,6 +136,7 @@
             this.Num_8.TabIndex = 7;
             this.Num_8.Text = "8";
             this.Num_8.UseVisualStyleBackColor = true;
+            this.Num_8.Click += new System.EventHandler(this.Num_8_Click);
             // 
             // Num_7
             // 
@@ -141,6 +147,7 @@
             this.Num_7.TabIndex = 8;
             this.Num_7.Text = "7";
             this.Num_7.UseVisualStyleBackColor = true;
+            this.Num_7.Click += new System.EventHandler(this.Num_7_Click);
             // 
             // Num_9
             // 
@@ -151,6 +158,7 @@
             this.Num_9.TabIndex = 9;
             this.Num_9.Text = "9";
             this.Num_9.UseVisualStyleBackColor = true;
+            this.Num_9.Click += new System.EventHandler(this.Num_9_Click);
             // 
             // Num_4
             // 
@@ -161,6 +169,7 @@
             this.Num_4.TabIndex = 10;
             this.Num_4.Text = "4";
             this.Num_4.UseVisualStyleBackColor = true;
+            this.Num_4.Click += new System.EventHandler(this.Num_4_Click);
             // 
             // Num_5
             // 
@@ -171,6 +180,7 @@
             this.Num_5.TabIndex = 11;
             this.Num_5.Text = "5";
             this.Num_5.UseVisualStyleBackColor = true;
+            this.Num_5.Click += new System.EventHandler(this.Num_5_Click);
             // 
             // Num_6
             // 
@@ -181,6 +191,7 @@
             this.Num_6.TabIndex = 12;
             this.Num_6.Text = "6";
             this.Num_6.UseVisualStyleBackColor = true;
+            this.Num_6.Click += new System.EventHandler(this.Num_6_Click);
             // 
             // Num_1
             // 
@@ -191,6 +202,7 @@
             this.Num_1.TabIndex = 13;
             this.Num_1.Text = "1";
             this.Num_1.UseVisualStyleBackColor = true;
+            this.Num_1.Click += new System.EventHandler(this.Num_1_Click);
             // 
             // Num_2
             // 
@@ -201,6 +213,7 @@
             this.Num_2.TabIndex = 14;
             this.Num_2.Text = "2";
             this.Num_2.UseVisualStyleBackColor = true;
+            this.Num_2.Click += new System.EventHandler(this.Num_2_Click);
             // 
             // Num_3
             // 
@@ -211,6 +224,7 @@
             this.Num_3.TabIndex = 15;
             this.Num_3.Text = "3";
             this.Num_3.UseVisualStyleBackColor = true;
+            this.Num_3.Click += new System.EventHandler(this.Num_3_Click);
             // 
             // Num_0
             // 
@@ -221,6 +235,7 @@
             this.Num_0.TabIndex = 17;
             this.Num_0.Text = "0";
             this.Num_0.UseVisualStyleBackColor = true;
+            this.Num_0.Click += new System.EventHandler(this.Num_0_Click);
             // 
             // Num_Decimal
             // 
@@ -231,6 +246,7 @@
             this.Num_Decimal.TabIndex = 18;
             this.Num_Decimal.Text = ".";
             this.Num_Decimal.UseVisualStyleBackColor = true;
+            this.Num_Decimal.Click += new System.EventHandler(this.Num_Decimal_Click);
             // 
             // DeleteBtn
             // 
@@ -241,6 +257,7 @@
             this.DeleteBtn.TabIndex = 19;
             this.DeleteBtn.Text = "«";
             this.DeleteBtn.UseVisualStyleBackColor = true;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
             // 
             // Main
             // 
